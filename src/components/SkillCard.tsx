@@ -100,7 +100,7 @@ export function SkillCard({ skill, status, onStatusChange, onLearnMore }: SkillC
         ) : (
           <Button
             size="sm"
-            className="flex-1"
+            className="flex-1 bg-primary/90 hover:bg-primary/80"
             onClick={() => onStatusChange('planned')}
           >
             + Add
