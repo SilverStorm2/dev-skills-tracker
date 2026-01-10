@@ -18,14 +18,14 @@ function App() {
   const progress = getProgress()
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background page-glow">
       <header className="border-b">
         <div className="container mx-auto px-4 py-6">
           <h1 className="text-3xl font-bold mb-2">
             🚀 Dev Skills Tracker
           </h1>
           <p className="text-muted-foreground text-sm sm:text-base">
-            Śledź swoją ścieżkę web developera - od podstaw do mastery
+            Śledź swoją ścieżkę web developera - od podstaw do mastera
           </p>
         </div>
       </header>
