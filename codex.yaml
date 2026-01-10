@@ -1,0 +1,437 @@
+# Dev Skills Tracker - Project Configuration
+# For AI-assisted development and automation
+
+project:
+  name: dev-skills-tracker
+  version: 0.1.0
+  description: "Interactive web app for tracking web development learning progress"
+  type: spa
+  license: MIT
+  
+  metadata:
+    conference: "Adepci IT 2025"
+    organization: "Koło Cybersecurity WSB-NLU"
+    author: "SilverStorm2"
+    educational:  true
+    target_audience: "Students and aspiring web developers"
+    
+  goals:
+    - Demonstrate modern web development stack
+    - Teach React + TypeScript best practices
+    - Show practical use of shadcn/ui
+    - Provide reusable learning template
+
+tech_stack:
+  frontend:
+    framework: "React"
+    version: "18.3.1"
+    language: "TypeScript"
+    language_version: "5.6.3"
+    
+  build: 
+    tool: "Vite"
+    version: "5.4.11"
+    
+  styling:
+    framework: "Tailwind CSS"
+    version: "3.4.15"
+    components: "shadcn/ui"
+    icons: "lucide-react"
+    
+  state:
+    management: "React Hooks"
+    persistence: "localStorage"
+    
+  deployment:
+    platform: "Vercel"
+    type: "static"
+
+structure:
+  source_dir: src
+  components_dir: src/components
+  data_dir: src/data
+  hooks_dir: src/hooks
+  utils_dir: src/lib
+  
+  key_files:
+    - src/App.tsx
+    - src/data/skills.ts
+    - src/hooks/useSkills.ts
+    - src/components/SkillCard.tsx
+    - src/components/SkillModal.tsx
+
+features:
+  core: 
+    - name: "Skill Display"
+      description: "Grid of technology cards with details"
+      priority: critical
+      status: required
+      
+    - name: "Progress Tracking"
+      description: "Track learning status (Planned/Learning/Completed)"
+      priority: critical
+      status: required
+      
+    - name: "Category Filtering"
+      description: "Filter by Frontend/Backend/Database/Tools/Design"
+      priority: high
+      status: required
+      
+    - name: "Skill Details Modal"
+      description: "Detailed view with resources and tips"
+      priority: high
+      status: required
+      
+    - name: "Progress Dashboard"
+      description: "Visual progress bar and statistics"
+      priority: medium
+      status: required
+      
+    - name: "Data Persistence"
+      description: "Save progress to localStorage"
+      priority: critical
+      status: required
+      
+  optional:
+    - name: "Search"
+      status: future
+    - name: "Sorting"
+      status: future
+    - name: "Export"
+      status: future
+    - name: "Backend Integration"
+      status: future
+
+data: 
+  skills:
+    total: 23
+    categories:
+      frontend: 9
+      backend: 3
+      database: 2
+      tools: 7
+      design: 1
+      
+    sources:
+      - "User's actual tech stack"
+      - "Adepci IT 2025 presentation context"
+      
+    schema:
+      - id: string (unique, kebab-case)
+      - name: string (display name)
+      - category: enum (frontend|backend|database|tools|design)
+      - difficulty: enum (beginner|intermediate|advanced)
+      - icon: string (emoji)
+      - description: string (Polish, 1-2 sentences)
+      - learningTime: string (e.g.  "2-3 miesiące")
+      - prerequisites: array of skill ids
+      - resources: array of {title, url}
+      - yourTip: string (optional, personal advice)
+
+components:
+  custom: 
+    - name: SkillCard
+      path: src/components/SkillCard.tsx
+      props:
+        - skill:  Skill
+        - status: Status | undefined
+        - onStatusChange: (status: Status) => void
+        - onLearnMore: () => void
+      description: "Individual skill card in the grid"
+      
+    - name: SkillModal
+      path: src/components/SkillModal.tsx
+      props:
+        - skill: Skill
+        - status: Status | undefined
+        - onStatusChange: (status: Status) => void
+        - onClose: () => void
+      description: "Detailed skill information modal"
+      
+  shadcn:
+    - card
+    - badge
+    - button
+    - tabs
+    - dialog
+    - progress
+
+hooks:
+  - name: useSkills
+    path: src/hooks/useSkills.ts
+    purpose: "Manage skill statuses and localStorage sync"
+    returns:
+      - skillStatuses:  Record<string, Status>
+      - updateSkillStatus: (id: string, status: Status) => void
+      - getProgress: () => ProgressMetrics
+      - resetProgress: () => void
+
+types:
+  core:
+    - name: Category
+      type: "'frontend' | 'backend' | 'database' | 'tools' | 'design'"
+      
+    - name: Status
+      type: "'planned' | 'learning' | 'completed'"
+      
+    - name:  Difficulty
+      type: "'beginner' | 'intermediate' | 'advanced'"
+      
+    - name:  Skill
+      type: interface
+      fields:
+        - id: string
+        - name: string
+        - category: Category
+        - difficulty: Difficulty
+        - icon: string
+        - description: string
+        - learningTime: string
+        - prerequisites:  string[]
+        - resources: Resource[]
+        - yourTip?:  string
+        
+    - name: Resource
+      type: interface
+      fields:
+        - title: string
+        - url: string
+
+styling:
+  approach: "Utility-first with Tailwind CSS"
+  theme: "shadcn default theme"
+  dark_mode: "Built-in (class-based)"
+  
+  breakpoints:
+    mobile: "< 768px"
+    tablet:  "768px - 1024px"
+    desktop: "> 1024px"
+    
+  colors:
+    difficulty: 
+      beginner: "green-500"
+      intermediate: "yellow-500"
+      advanced: "red-500"
+    status:
+      planned: "gray-500"
+      learning: "blue-500"
+      completed: "green-500"
+
+development:
+  setup_commands:
+    - npm create vite@latest dev-skills-tracker -- --template react-ts
+    - cd dev-skills-tracker
+    - npm install
+    - npm install -D tailwindcss postcss autoprefixer
+    - npx tailwindcss init -p
+    - npx shadcn@latest init -d
+    - npx shadcn@latest add card badge button tabs dialog progress
+    - npm install lucide-react
+    
+  run_commands:
+    dev: npm run dev
+    build: npm run build
+    preview: npm run preview
+    
+  ports:
+    dev: 5173
+
+testing:
+  strategy: "Manual testing for MVP"
+  checklist:
+    - All skills display correctly
+    - Status changes work
+    - localStorage persists
+    - Filters work
+    - Modal opens/closes
+    - Responsive on mobile
+    - No console errors
+    
+  future: 
+    unit:  "Vitest + React Testing Library"
+    e2e: "Playwright"
+
+deployment:
+  platform:  Vercel
+  
+  steps:
+    - "Push to GitHub"
+    - "Import repo on vercel. com"
+    - "Auto-detect Vite settings"
+    - "Deploy"
+    
+  requirements:
+    - Node.js 18+
+    - No environment variables
+    - No backend needed
+    
+  output:
+    type: "Static site"
+    directory: "dist/"
+
+performance:
+  targets:
+    load_time: "< 2 seconds"
+    bundle_size: "< 200KB gzipped"
+    lighthouse_score: "> 90"
+    
+  optimizations:
+    - Tree shaking (Vite default)
+    - Code splitting (React. lazy if needed)
+    - Image optimization (not needed - emojis only)
+    - Lazy loading (not needed - small dataset)
+
+accessibility:
+  standards: "WCAG 2.1 AA"
+  features: 
+    - Keyboard navigation (via shadcn)
+    - ARIA labels (via shadcn)
+    - Color contrast (via shadcn theme)
+    - Focus indicators (via shadcn)
+
+i18n:
+  languages:
+    - pl (Polish) - primary
+  future:
+    - en (English)
+
+documentation:
+  files:
+    - README.md
+    - MVP.md
+    - AGENT.md
+    - codex.yaml (this file)
+    
+  inline: 
+    style: "Minimal - code should be self-documenting"
+    use_cases: 
+      - Complex algorithms
+      - Non-obvious decisions
+      - TODO markers
+
+conventions:
+  naming:
+    components: PascalCase
+    files: PascalCase for components, camelCase for utils
+    variables: camelCase
+    constants:  UPPER_SNAKE_CASE
+    types: PascalCase
+    
+  file_structure:
+    - One component per file
+    - Co-locate tests (future)
+    - Index files for barrel exports (if needed)
+    
+  imports:
+    order:
+      - React
+      - External libraries
+      - Internal components
+      - Types
+      - Styles
+      
+  typescript:
+    strict: true
+    no_any: true
+    explicit_function_return_types: false (React components)
+
+git:
+  branch_strategy: "main only (for MVP)"
+  commit_convention: "Conventional Commits"
+  commit_types:
+    - feat (new feature)
+    - fix (bug fix)
+    - docs (documentation)
+    - style (formatting)
+    - refactor (code restructure)
+    - test (tests)
+    - chore (maintenance)
+
+environment:
+  node_version:  "18.x"
+  package_manager: "npm"
+  
+  browsers_support:
+    - "Chrome >= 90"
+    - "Firefox >= 88"
+    - "Safari >= 14"
+    - "Edge >= 90"
+
+scripts:
+  pre_commit: 
+    - "npm run build"
+  
+  pre_push:
+    - "npm run build"
+
+future_enhancements:
+  phase_2:
+    - Search functionality
+    - Sorting options
+    - Export to JSON
+    - Reset progress UI
+    
+  phase_3:
+    - Supabase integration
+    - Multi-user support
+    - Share progress via URL
+    - Community ratings
+    
+  phase_4:
+    - AI recommendations
+    - GitHub integration
+    - Gamification
+    - Mobile app
+
+notes:
+  - "Keep it simple - this is an educational project"
+  - "Code should be readable by students"
+  - "Prioritize clarity over cleverness"
+  - "Every decision should be explainable in presentation"
+  - "Test on mobile before presenting"
+  - "Have offline backup for demo"
+
+constraints:
+  time:  "5 hours development time"
+  complexity: "Beginner-friendly code"
+  dependencies: "Minimal - only listed in tech_stack"
+  backend: "None - frontend only"
+  authentication: "None"
+  
+success_criteria:
+  technical:
+    - No TypeScript errors
+    - No console errors
+    - Builds successfully
+    - Deploys to Vercel
+    
+  functional:
+    - All 23 skills display
+    - Progress tracking works
+    - Data persists
+    - Filters work
+    
+  ux:
+    - Responsive design
+    - Smooth interactions
+    - Clear feedback
+    - Accessible
+    
+  educational:
+    - Students can understand code
+    - Well-documented
+    - Easy to modify
+    - Good starting point for learning
+
+contacts:
+  github: SilverStorm2
+  project:  dev-skills-tracker
+  conference: Adepci IT 2025
+  organization: Koło Cybersecurity WSB-NLU
+
+meta:
+  created:  2026-01-10
+  last_updated: 2026-01-10
+  version: 1.0.0
+  format:  YAML
+  purpose: "AI agent configuration and project documentation"
