@@ -1077,7 +1077,7 @@ function App() {
       <footer className="border-t mt-12">
         <div className="container mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
           <p>
-            Made with ❤️ for <strong>Adepci IT 2025</strong> conference
+            Made with ❤️ for <strong>Adepci IT 2026</strong> conference
           </p>
           <p className="mt-1">
             Koło Cybersecurity WSB-NLU
@@ -1115,7 +1115,7 @@ export default App
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dev Skills Tracker | Adepci IT 2025</title>
+    <title>Dev Skills Tracker | Adepci IT 2026</title>
     <meta name="description" content="Śledź swoją ścieżkę web developera - od podstaw do mastery" />
   </head>
   <body>
@@ -1243,7 +1243,7 @@ npm run preview
 
 Interaktywna aplikacja do śledzenia postępów w nauce technologii web developerskich. 
 
-Stworzona na konferencję **Adepci IT 2025** przez Koło Cybersecurity WSB-NLU.
+Stworzona na konferencję **Adepci IT 2026** przez Koło Cybersecurity WSB-NLU.
 
 ![React](https://img.shields.io/badge/React-18-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue) ![Tailwind](https://img.shields.io/badge/Tailwind-3-blue)
 
@@ -1376,7 +1376,7 @@ MIT - use freely for learning!
 
 **Koło Cybersecurity WSB-NLU**
 
-Prezentacja: *Adepci IT 2025*
+Prezentacja: *Adepci IT 2026*
 
 ---
 

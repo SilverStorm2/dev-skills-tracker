@@ -7,7 +7,7 @@
 **Technologie**: React 18 + TypeScript + Tailwind CSS + shadcn/ui
 **Cel**: Interaktywna aplikacja do śledzenia postępów w nauce technologii web developerskich
 
-**Kontekst**: Projekt prezentacyjny dla konferencji "Adepci IT 2025" - pokazuje modern web development stack w praktyce. 
+**Kontekst**: Projekt prezentacyjny dla konferencji "Adepci IT 2026" - pokazuje modern web development stack w praktyce. 
 
 ---
 
@@ -150,7 +150,7 @@ type Status = 'planned' | 'learning' | 'completed'
 │ │ Card 4 │ │ Card 5 │ │ Card 6 │                  │
 │ └────────┘ └────────┘ └────────┘                  │
 ├─────────────────────────────────────────────────────┤
-│ Footer: Made for Adepci IT 2025                    │
+│ Footer: Made for Adepci IT 2026                    │
 └─────────────────────────────────────────────────────┘
 ```
 

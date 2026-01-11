@@ -2,7 +2,7 @@
 
 Interaktywna aplikacja do śledzenia postępów w nauce technologii web developerskich. 
 
-Stworzona na konferencję **Adepci IT 2025** przez Koło Cybersecurity WSB-NLU.
+Stworzona na konferencję **Adepci IT 2026** przez Koło Cybersecurity WSB-NLU.
 
 ![React](https://img.shields.io/badge/React-18-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue) ![Tailwind](https://img.shields.io/badge/Tailwind-3-blue)
 
@@ -135,7 +135,7 @@ MIT - use freely for learning!
 
 **Koło Cybersecurity WSB-NLU**
 
-Prezentacja: *Adepci IT 2025*
+Prezentacja: *Adepci IT 2026*
 
 ---
 

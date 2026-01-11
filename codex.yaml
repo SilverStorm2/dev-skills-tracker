@@ -9,7 +9,7 @@ project:
   license: MIT
   
   metadata:
-    conference: "Adepci IT 2025"
+    conference: "Adepci IT 2026"
     organization: "Koło Cybersecurity WSB-NLU"
     author: "SilverStorm2"
     educational:  true
@@ -114,7 +114,7 @@ data:
       
     sources:
       - "User's actual tech stack"
-      - "Adepci IT 2025 presentation context"
+      - "Adepci IT 2026 presentation context"
       
     schema:
       - id: string (unique, kebab-case)
@@ -426,7 +426,7 @@ success_criteria:
 contacts:
   github: SilverStorm2
   project:  dev-skills-tracker
-  conference: Adepci IT 2025
+  conference: Adepci IT 2026
   organization: Koło Cybersecurity WSB-NLU
 
 meta:
