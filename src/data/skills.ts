@@ -282,7 +282,7 @@ export const skillsData: Skill[] = [
     yourTip: 'Fastest way to backend!  Świetne do prototypów i MVP.'
   },
 
-  // TOOLS (7)
+  // TOOLS (8)
   {
     id: 'git',
     name: 'Git',
@@ -417,6 +417,22 @@ export const skillsData: Skill[] = [
       { title: 'Slack Help', url: 'https://slack.com/help' }
     ],
     yourTip: 'Channels, threads, shortcuts - organizacja to klucz.'
+  },
+  {
+    id: 'github-copilot',
+    name: 'GitHub Copilot',
+    category: 'tools',
+    difficulty: 'beginner',
+    icon: '🤖',
+    description: 'AI asystent do pisania kodu - podpowiedzi w edytorze w czasie rzeczywistym.',
+    learningTime: '2-3 dni',
+    prerequisites: ['git', 'github'],
+    resources: [
+      { title: 'GitHub Copilot', url: 'https://github.com/features/copilot' },
+      { title: 'Copilot Docs', url: 'https://docs.github.com/en/copilot' },
+      { title: 'Getting started with Copilot in VS Code', url: 'https://code.visualstudio.com/docs/copilot/overview' }
+    ],
+    yourTip: 'Traktuj podpowiedzi jako szkic - zawsze weryfikuj i poprawiaj.'
   },
 
   // DESIGN (1)

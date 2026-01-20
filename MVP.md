@@ -96,11 +96,12 @@
 - WebStorm
 - Vercel
 - Slack
+- GitHub Copilot (AI wspomagajacy pisanie kodu)
 
 **Design** (1):
 - Adobe Photoshop
 
-**RAZEM:  23 technologie**
+**RAZEM:  24 technologie**
 
 ### Struktura danych (TypeScript):
 
