@@ -23,7 +23,7 @@ function App() {
       <header className="border-b">
         <div className="container mx-auto px-4 py-6">
           <h1 className="text-3xl font-bold mb-2">
-            Dev Skills Tracker | Web Development
+            Dev Skills Tracker | Full-Stack Web Development
           </h1>
           <p className="text-muted-foreground text-sm sm:text-base">
             Śledź swoją ścieżkę web developera - od podstaw do mastera
