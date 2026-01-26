@@ -102,10 +102,10 @@ function App() {
       <footer className="border-t mt-12">
         <div className="container mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
           <p>
-            Made with ❤️ for <strong>Adepci IT 2026</strong> conference
+            Made with ❤️ for educational &amp; demo purposes
           </p>
           <p className="mt-1">
-            Koło Cybersecurity WSB-NLU
+            Cybersecurity • Web Development • UI/UX
           </p>
         </div>
       </footer>
