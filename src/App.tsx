@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Linkedin } from 'lucide-react'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Progress } from '@/components/ui/progress'
 import { SkillCard } from '@/components/SkillCard'
@@ -105,7 +106,17 @@ function App() {
             Made with ❤️ for educational &amp; demo purposes
           </p>
           <p className="mt-1">
-            Cybersecurity • Web Development • UI/UX
+            Designed &amp; developed by
+            <a
+              href="https://www.linkedin.com/in/gabriela-gugulska-sierant-203021238/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn profile"
+              className="inline-flex items-center ml-2 text-muted-foreground/60 hover:text-muted-foreground/90 transition-colors"
+            >
+              <Linkedin className="h-3.5 w-3.5" />
+            </a>
+            <span className="sr-only">in</span>
           </p>
         </div>
       </footer>
