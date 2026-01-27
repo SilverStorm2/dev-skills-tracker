@@ -8,10 +8,15 @@ interface SkillCardProps {
   skill: Skill
   status?: Status
   onStatusChange: (status: Status) => void
-  onLearnMore: () => void
+  onDetailsClick: () => void
 }
 
-export function SkillCard({ skill, status, onStatusChange, onLearnMore }: SkillCardProps) {
+export function SkillCard({
+  skill,
+  status,
+  onStatusChange,
+  onDetailsClick,
+}: SkillCardProps) {
   const difficultyColors = {
     beginner: 'bg-green-500',
     intermediate: 'bg-yellow-500',
@@ -82,7 +87,7 @@ export function SkillCard({ skill, status, onStatusChange, onLearnMore }: SkillC
           size="sm"
           variant="outline"
           className="flex-1"
-          onClick={onLearnMore}
+          onClick={onDetailsClick}
         >
           <BookOpen className="w-4 h-4 mr-1" />
           <span className="hidden sm:inline">Details</span>

@@ -1,0 +1,10 @@
+# Dev Skills Tracker v2.0 - Project Configuration
+# With Supabase Authentication & Cloud Sync
+
+project:
+  name: dev-skills-tracker
+  version: 2.0.0
+  description: "Interactive web app for tracking web development learning progress with cloud sync"
+  type: spa-with-backend
+  license: MIT
+  

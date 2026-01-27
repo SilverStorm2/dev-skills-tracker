@@ -11,15 +11,26 @@ import { ExternalLink } from 'lucide-react'
 import type { Skill, Status } from '@/data/skills'
 
 interface SkillModalProps {
-  skill: Skill
+  skill: Skill | null
+  open: boolean
+  onOpenChange: (open: boolean) => void
   status?: Status
   onStatusChange: (status: Status) => void
-  onClose: () => void
 }
 
-export function SkillModal({ skill, status, onStatusChange, onClose }: SkillModalProps) {
+export function SkillModal({
+  skill,
+  open,
+  onOpenChange,
+  status,
+  onStatusChange,
+}: SkillModalProps) {
+  if (!skill) return null
+
+  const handleClose = () => onOpenChange(false)
+
   return (
-    <Dialog open={true} onOpenChange={onClose}>
+    <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
           <div className="flex items-center gap-3 mb-2">
@@ -92,7 +103,7 @@ export function SkillModal({ skill, status, onStatusChange, onClose }: SkillModa
             {!status ? (
               <Button className="w-full" onClick={() => {
                 onStatusChange('planned')
-                onClose()
+                handleClose()
               }}>
                 📋 Dodaj do Planned
               </Button>
@@ -100,11 +111,11 @@ export function SkillModal({ skill, status, onStatusChange, onClose }: SkillModa
               <>
                 <Button variant="outline" className="flex-1" onClick={() => {
                   onStatusChange('learning')
-                  onClose()
+                  handleClose()
                 }}>
                   📚 Start Learning
                 </Button>
-                <Button variant="ghost" onClick={onClose}>
+                <Button variant="ghost" onClick={handleClose}>
                   Close
                 </Button>
               </>
@@ -112,11 +123,11 @@ export function SkillModal({ skill, status, onStatusChange, onClose }: SkillModa
               <>
                 <Button className="flex-1" onClick={() => {
                   onStatusChange('completed')
-                  onClose()
+                  handleClose()
                 }}>
                   ✅ Mark as Completed
                 </Button>
-                <Button variant="ghost" onClick={onClose}>
+                <Button variant="ghost" onClick={handleClose}>
                   Close
                 </Button>
               </>
@@ -124,11 +135,11 @@ export function SkillModal({ skill, status, onStatusChange, onClose }: SkillModa
               <>
                 <Button variant="outline" className="flex-1" onClick={() => {
                   onStatusChange('planned')
-                  onClose()
+                  handleClose()
                 }}>
                   🔄 Reset
                 </Button>
-                <Button variant="ghost" onClick={onClose}>
+                <Button variant="ghost" onClick={handleClose}>
                   Close
                 </Button>
               </>
